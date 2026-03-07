@@ -7,12 +7,17 @@
 
 <style>
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
 margin:0;
 font-family:Arial, sans-serif;
 color:white;
-background-image:url("https://images.unsplash.com/photo-1492724441997-5dc865305da7");
+background-image:url("https://images.unsplash.com/photo-1518770660439-4636190af475");
 background-size:cover;
+background-position:center;
 background-attachment:fixed;
 }
 
@@ -23,10 +28,34 @@ top:0;
 left:0;
 width:100%;
 height:100%;
+background:rgba(0,0,0,0.75);
 backdrop-filter:blur(6px);
-background:rgba(0,0,0,0.45);
 z-index:-1;
 }
+
+/* MENU */
+
+nav{
+position:sticky;
+top:0;
+background:rgba(0,0,0,0.8);
+padding:12px;
+text-align:center;
+z-index:10;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-size:16px;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+/* początek */
 
 .hero{
 text-align:center;
@@ -34,46 +63,122 @@ padding:80px 20px;
 }
 
 .hero h1{
-background-image:url("https://images.unsplash.com/photo-1518770660439-4636190af475");
-background-size:cover;
-background-position:center;
-padding:70px 20px;
-border-radius:10px;
+margin:0;
+font-size:46px;
 }
 
+/* kontener */
+
 .container{
-max-width:900px;
+max-width:1200px;
 margin:auto;
-padding:30px;
+padding:40px;
 }
 
 .section{
-margin-bottom:40px;
+margin-bottom:60px;
 }
 
 .block{
 background-size:cover;
 background-position:center;
 border-radius:10px;
-margin:20px 0;
+margin:25px 0;
 overflow:hidden;
+transition:transform 0.3s, box-shadow 0.3s;
+}
+
+.block:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
 
 .overlay{
-background:rgba(0,0,0,0.6);
-padding:25px;
+background:rgba(0,0,0,0.65);
+padding:30px;
 }
 
 h2{
 margin-top:40px;
+font-size:30px;
 }
 
-.end{
-background-image:url("https://images.unsplash.com/photo-1508780709619-79562169bc64");
-background-size:cover;
-background-position:center;
-padding:140px 20px;
-margin-top:40px;
+h3{
+margin-top:10px;
+}
+
+/* stopka */
+
+footer{
+text-align:center;
+padding:50px 20px;
+font-size:14px;
+margin-top:60px;
+border-top:1px solid rgba(255,255,255,0.2);
+line-height:1.6;
+}
+
+/* responsywność */
+
+@media (max-width:900px){
+
+.container{
+padding:25px;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+h2{
+font-size:26px;
+}
+
+.overlay{
+padding:22px;
+}
+
+}
+
+@media (max-width:600px){
+
+.container{
+padding:18px;
+}
+
+.hero{
+padding:60px 15px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+h2{
+font-size:22px;
+}
+
+h3{
+font-size:18px;
+}
+
+.overlay{
+padding:18px;
+}
+
+nav a{
+display:block;
+margin:8px 0;
+}
+
+}
+
+@media (min-width:1400px){
+
+.container{
+max-width:1400px;
+}
+
 }
 
 </style>
@@ -81,13 +186,19 @@ margin-top:40px;
 
 <body>
 
+<nav>
+<a href="#prawo">Prawo autorskie</a>
+<a href="#licencje">Licencje oprogramowania</a>
+<a href="#ezasoby">Licencje e-zasobów</a>
+</nav>
+
 <div class="hero">
 <h1>Normy etyczne i prawne w internecie</h1>
 </div>
 
 <div class="container">
 
-<div class="section">
+<div class="section" id="prawo">
 
 <h2>Prawo autorskie</h2>
 
@@ -104,7 +215,7 @@ Utwór- w kontekście prawa autorskiego, jest określany jako każdy przejaw dzi
 <div class="overlay">
 <h3>Autorskie prawa osobiste i majątkowe</h3>
 <p>
-Autorskie-prawa osobiste,majątkowe.Autorskie prawa osobiste chronią nieograniczone w czasie i niepodlegające zrzeczeniu się lub zbyciu prawo twórcy do autorstwa utworu, oznaczenia utworu swoim nazwiskiem lub pseudonimem albo do udostępniania go anonimowo, a także nienaruszalności treści i formy utworu oraz jego rzetelnego wykorzystania, decydowania o pierwszym udostępnieniu utworu publiczności czy nadzoru nad sposobem korzystania z utworu.
+Autorskie-prawa osobiste, majątkowe. Autorskie prawa osobiste chronią nieograniczone w czasie i niepodlegające zrzeczeniu się lub zbyciu prawo twórcy do autorstwa utworu, oznaczenia utworu swoim nazwiskiem lub pseudonimem albo do udostępniania go anonimowo, a także nienaruszalności treści i formy utworu oraz jego rzetelnego wykorzystania, decydowania o pierwszym udostępnieniu utworu publiczności czy nadzoru nad sposobem korzystania z utworu.
 </p>
 </div>
 </div>
@@ -113,7 +224,7 @@ Autorskie-prawa osobiste,majątkowe.Autorskie prawa osobiste chronią nieogranic
 <div class="overlay">
 <h3>Domena publiczna</h3>
 <p>
-Domena publiczna-zbiór twórczości, z której można korzystać bez ograniczeń, tj. kopiować, modyfikować i rozpowszechniać bez uiszczania wynagrodzenia także w celach komercyjnych.
+Domena publiczna - zbiór twórczości, z której można korzystać bez ograniczeń, tj. kopiować, modyfikować i rozpowszechniać bez uiszczania wynagrodzenia także w celach komercyjnych.
 </p>
 </div>
 </div>
@@ -122,14 +233,14 @@ Domena publiczna-zbiór twórczości, z której można korzystać bez ogranicze�
 <div class="overlay">
 <h3>Dozwolony użytek</h3>
 <p>
-Dozwolony użytek- jest formą ograniczenia autorskich praw majątkowych i daje nam możliwość korzystania z chronionego takimi prawami utworu bez konieczności uzyskiwania zgody podmiotu uprawnionego tj. autora czy też np. wydawcy/producenta, który nabył autorskie prawa majątkowe.
+Dozwolony użytek - jest formą ograniczenia autorskich praw majątkowych i daje nam możliwość korzystania z chronionego takimi prawami utworu bez konieczności uzyskiwania zgody podmiotu uprawnionego tj. autora czy też np. wydawcy/producenta, który nabył autorskie prawa majątkowe.
 </p>
 </div>
 </div>
 
 </div>
 
-<div class="section">
+<div class="section" id="licencje">
 
 <h2>Licencje oprogramowania</h2>
 
@@ -180,7 +291,7 @@ Licencja GNU GPL-daje wolność uruchamiania programu w dowolnym celu i bez żad
 
 </div>
 
-<div class="section">
+<div class="section" id="ezasoby">
 
 <h2>Licencje e-zasobów</h2>
 
@@ -197,7 +308,9 @@ Licencja Creative Commons (CC)-to rodzaj licencji praw autorskich, która pozwal
 
 </div>
 
-<div class="end"></div>
+<footer>
+<p>Polityka prywatności • Warunki korzystania • Bezpieczeństwo w sieci</p>
+</footer>
 
 </body>
-    </html>
+</html>
